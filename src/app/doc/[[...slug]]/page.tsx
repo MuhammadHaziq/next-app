@@ -1,4 +1,4 @@
-export default function docsPages({
+export default function docPages({
   params,
 }: {
   params: {
@@ -18,5 +18,5 @@ export default function docsPages({
     return <h1> Doc With Single Slug Value {params.slug[0]}</h1>;
   }
 
-  return <h1> Docs Page</h1>;
+  return <h1> Doc Page</h1>;
 }
