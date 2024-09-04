@@ -1,10 +1,20 @@
-export default function docsPages({
-  params,
-}: {
+import { Metadata } from "next";
+
+type Props = {
   params: {
     slug: string[];
   };
-}) {
+};
+
+export const generateMetadata = ({ params }: Props): Metadata => {
+  return {
+    title: {
+      absolute: `Doc ${params?.slug?.join(" ")}`,
+    },
+  };
+};
+
+export default function docsPages({ params }: Props) {
   if (params.slug?.length === 2) {
     return (
       <h1>

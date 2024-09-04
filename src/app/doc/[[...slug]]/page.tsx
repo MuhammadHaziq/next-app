@@ -1,10 +1,18 @@
-export default function docPages({
-  params,
-}: {
+import { Metadata } from "next";
+
+type Props = {
   params: {
     slug: string[];
   };
-}) {
+};
+
+export const generateMetadata = ({ params }: Props): Metadata => {
+  return {
+    title: `${params?.slug?.join(" ")}`,
+  };
+};
+
+export default function docPages({ params }: Props) {
   if (params.slug?.length === 2) {
     return (
       <h1>
