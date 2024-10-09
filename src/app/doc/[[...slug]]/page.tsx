@@ -18,7 +18,7 @@ export default function docPages({ params }: Props) {
       <h1>
         Doc With Multiple Slugs{" "}
         {params.slug?.map((param) => (
-          <h4 key={param}>{param}</h4>
+          <p key={param}>{param}</p>
         ))}
       </h1>
     );
