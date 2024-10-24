@@ -21,7 +21,7 @@ export default function ProductDetailLayout({
   return (
     <>
       {children}
-      <h2>Feature Products</h2>
+      <h2 className="mt-2">Feature Products</h2>
     </>
   );
 }

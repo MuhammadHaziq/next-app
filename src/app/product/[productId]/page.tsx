@@ -1,16 +1,16 @@
-"use client"
-// import { Metadata } from "next";
+// "use client"
+import { Metadata } from "next";
 type Props = {
   params: {
     productId: number;
   };
 };
 
-// export const generateMetadata = ({ params }: Props): Metadata => {
-//   return {
-//     title: `Product ${params?.productId}`,
-//   };
-// };
+export const generateMetadata = ({ params }: Props): Metadata => {
+  return {
+    title: `Product ${params?.productId}`,
+  };
+};
 
 export default function ProductDetail({ params }: Props) {
   return (

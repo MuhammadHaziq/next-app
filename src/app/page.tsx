@@ -2,12 +2,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="">
+      <div className="flex flex-col">
         <h1>Home Page</h1>
-        <Link href={"/blog"}> Blog </Link>
-        <Link href={"/product"}> Product </Link>
+        <Link href={"/blog"} className="text-blue-600 visited:text-purple-600"> Blog </Link>
+        <Link href={"/product"} className="text-blue-600 visited:text-purple-600"> Product </Link>
       </div>
-    </main>
   );
 }
+ 
