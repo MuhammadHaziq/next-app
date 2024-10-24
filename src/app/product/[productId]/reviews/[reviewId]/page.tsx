@@ -15,11 +15,11 @@ export default function ProductReviews({
     /** Test After Remove The Error.tsx file */
     throw new Error("Error in loading review")
   }
-  {
+  
     if (params?.reviewId > 200) {
       return notFound();
     }
-  }
+  
   return (
     <>
       <h1>
