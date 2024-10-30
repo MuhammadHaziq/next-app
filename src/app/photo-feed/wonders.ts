@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
-import photo1 from "./photos/1.jpg";
-import photo2 from "./photos/2.jpg";
-import photo3 from "./photos/3.jpg";
-import photo4 from "./photos/4.jpg";
-import photo5 from "./photos/5.jpg";
-import photo6 from "./photos/6.jpg";
-import photo7 from "./photos/7.jpg";
+import photo1 from "@image/photo-feeds/1.jpg"
+import photo2 from "@image/photo-feeds/2.jpg"
+import photo3 from "@image/photo-feeds/3.jpg"
+import photo4 from "@image/photo-feeds/4.jpg"
+import photo5 from "@image/photo-feeds/5.jpg"
+import photo6 from "@image/photo-feeds/6.jpg"
+import photo7 from "@image/photo-feeds/7.jpg"
 
 export type WonderImage = {
   id: string;
