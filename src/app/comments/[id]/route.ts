@@ -1,12 +1,13 @@
+import { NextRequest } from "next/server";
 import { comments } from "../data";
 
-export async function GET(request:Request, {params}:{params:{id:string}}){
+export async function GET(request:NextRequest, {params}:{params:{id:string}}){
     const {id} = params
     const comment = comments.find(comment => comment.id === parseInt(params?.id))
     return Response.json(comment);
 }
 
-export async function PATCH(request:Request, {params}:{params:{id:string}}){
+export async function PATCH(request:NextRequest, {params}:{params:{id:string}}){
     const body = await request.json();
     const {id} = params
     const updateComments = comments.map(comment => {
@@ -21,7 +22,7 @@ export async function PATCH(request:Request, {params}:{params:{id:string}}){
         }, status:200    });
 }
 
-export async function DELETE(request:Request, {params}:{params:{id:string}}){
+export async function DELETE(request:NextRequest, {params}:{params:{id:string}}){
     const {id} = params
 
     const updateComments =  comments.filter(comment => {

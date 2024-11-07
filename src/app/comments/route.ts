@@ -8,7 +8,7 @@ export async function GET(request:NextRequest) {
     return  Response.json(filterData)
 }
 
-export async function POST(request:Request) {
+export async function POST(request:NextRequest) {
     const comment = await request.json();
     comments.push({
         id:comments?.length + 1,
