@@ -1,7 +1,8 @@
 import { redirect } from "next/navigation";
 import { comments } from "../data";
+import { NextRequest } from "next/server";
 
-export async function GET(request:Request, {params}:{params:{id:string}}){
+export async function GET(request:NextRequest, {params}:{params:{id:string}}){
     const {id} = params
     if(parseInt(id) > comments?.length){
         redirect("/comments")
@@ -10,7 +11,7 @@ export async function GET(request:Request, {params}:{params:{id:string}}){
     return Response.json(comment);
 }
 
-export async function PATCH(request:Request, {params}:{params:{id:string}}){
+export async function PATCH(request:NextRequest, {params}:{params:{id:string}}){
     const body = await request.json();
     const {id} = params
     const updateComments = comments.map(comment => {
@@ -25,7 +26,7 @@ export async function PATCH(request:Request, {params}:{params:{id:string}}){
         }, status:200    });
 }
 
-export async function DELETE(request:Request, {params}:{params:{id:string}}){
+export async function DELETE(request:NextRequest, {params}:{params:{id:string}}){
     const {id} = params
 
     const updateComments =  comments.filter(comment => {
