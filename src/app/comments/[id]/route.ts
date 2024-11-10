@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation";
-import { NextRequest } from "next/server";
 import { comments } from "../data";
 import { NextRequest } from "next/server";
 
