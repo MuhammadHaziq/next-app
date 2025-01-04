@@ -6,6 +6,8 @@ export default function AuthLayout({
 }:{children:React.ReactNode}){
 /** Get Active Links */
 const [state,setState] = useState('')
+  /** Check In Browser Console and in terminal  */
+  console.log("Auth Client Component")
     return (
         <div>
             Template
