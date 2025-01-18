@@ -3,10 +3,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import serverSideFunction from "@/utils/serverSideFunction";
-/** Check Difference After Remove from utile server-only import after that check browser logs */
-export default function ClientRoutePage() {
-  console.log("Client Route Page");
+
+export default function CarouselComponent() {
+  console.log("Carousel Component");
   const settings = {
     dots: true,
     infinite: true,
@@ -15,11 +14,8 @@ export default function ClientRoutePage() {
     slidesToScroll: 1,
   };
 
-  //   const result = serverSideFunction();
   return (
     <>
-      <h1>Client Route Page</h1>
-      {/* {result} */}
       <div className="image-slider-container">
         <Slider {...settings}>
           <div>
