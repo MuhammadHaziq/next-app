@@ -1,5 +1,16 @@
-"use client"
-/** Test After Remove use client */
-export default function Error({error, reset}:{error:Error, reset:()=>void}){
-    return <>{error?.message} <br/> <button onClick={reset}> Try Again</button></>
+"use client";
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
+  return (
+    <div>
+      <h2>{error.message}</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  );
 }

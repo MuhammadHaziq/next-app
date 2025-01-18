@@ -1,21 +1,23 @@
-// "use client"
 import { Metadata } from "next";
+
 type Props = {
-  params: {
-    productId: number;
-  };
+  params: { productId: string };
 };
 
-export const generateMetadata = ({ params }: Props): Metadata => {
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { productId } = params;
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productId);
+    }, 100);
+  });
   return {
-    title: `Product ${params?.productId}`,
+    title: `Product ${title}`,
   };
 };
 
-export default function ProductDetail({ params }: Props) {
-  return (
-    <>
-      <h1> Product Detail {params.productId}</h1>
-    </>
-  );
+export default function ProductDetails({ params }: Props) {
+  return <h1>Details about product {params.productId}</h1>;
 }
