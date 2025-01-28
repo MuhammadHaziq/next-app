@@ -2,9 +2,12 @@ FROM node
 
 WORKDIR /app
 
-COPY . /app
+COPY package.json package-lock.json /app/
 
 RUN npm install
+
+COPY . /app
+
 # Run the json-server
 RUN npm run build
 
