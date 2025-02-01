@@ -8,9 +8,24 @@ RUN npm install
 
 COPY . /app
 
-# Run the json-server
-RUN npm run build
+###################################################
+## Start Run JSON Server And Next In Same Container
+###################################################
+# Install json-server globally
+RUN npm install -g json-server
 
-EXPOSE 3000
+COPY . /app
 
-CMD ["npm", "start"]
+# Run json-server in the background on port 3001
+CMD ["sh", "-c", "json-server --watch db.json --port 3001 & npm run build && npm start"]
+
+EXPOSE 3000 3001
+
+###################################################
+## End Run JSON Server And Next In Same Container
+###################################################
+# RUN npm run build
+
+# EXPOSE 3000
+
+# CMD ["npm", "start"]
