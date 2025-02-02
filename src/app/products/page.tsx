@@ -27,14 +27,17 @@ type Product = {
  */
 
 export default async function ProductPage() {
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
+
   /** This API Response is cached because it's called before no-store */
   // const responseDetail = await fetch("http://localhost:3001/products/1");
-  const response = await fetch("http://localhost:3001/products", {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`, {
+    // 172.18.0.2
     /** If we set cache = no-store then fetch send request for data every time when user load the page
      * no-store un cache the all subsequent fetch requests
      * please verify by comment the cache and check in json server terminal
      */
-    // cache: "no-store",
+    cache: "no-store",
   });
 
   /** Comment This and see difference */
@@ -42,7 +45,12 @@ export default async function ProductPage() {
   cookiesStore.get("theme");
 
   /** This API Response is not cached because it's subsequent of no-store */
-  const responseDetail1 = await fetch("http://localhost:3001/products/1");
+  const responseDetail1 = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/products/1`,
+    {
+      cache: "no-store",
+    }
+  );
   const products: Product[] = await response.json();
   return (
     <ul className="space-y-4 p-4">
